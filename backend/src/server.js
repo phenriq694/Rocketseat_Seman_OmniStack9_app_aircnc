@@ -10,6 +10,7 @@ const routes = require('./routes')
 // Criação da aplicação 
 const app = express()
 
+//Conexão com o banco de dados MongoDB
 mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-byatw.mongodb.net/semana09?retryWrites=true&w=majority',
 {
     useNewUrlParser : true,

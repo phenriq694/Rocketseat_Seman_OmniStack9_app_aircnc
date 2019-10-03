@@ -1,5 +1,7 @@
 const express = require('express')
 
+const SessionController = require('./controllers/SessionController')
+
 const routes = express.Router()
 
 // Métodos do Express: GET, POST, PUT, DELETE
@@ -13,8 +15,6 @@ const routes = express.Router()
  * fazer algo com essa informação passando uma função (arrow function) com os parâmetros 'res' de response e 'req' de request, 
  * para tratar as requisições e responder para client. 
  */
-routes.post('/users', (req, res) => {
-    return res.json({message : 'Hello World!'})
-})
+routes.post('/sessions', SessionController.store)
 
 module.exports = routes

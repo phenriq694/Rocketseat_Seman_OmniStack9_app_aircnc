@@ -4,6 +4,8 @@ const express = require('express')
 // Importação do Mogoose para facilitar o trabalho ocm o MongoDB
 const mongoose = require('mongoose')
 
+const cors = require('cors')
+
 const routes = require('./routes')
 
 
@@ -16,6 +18,9 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-byatw.mongodb.net/
     useNewUrlParser : true,
     useUnifiedTopology : true
 })
+
+// Permitindo que outras aplicações acessem esta API
+app.use(cors())
 
 // Informando para a aplicação Express que as requisições estão utilizando o tipo JSON
 app.use(express.json())

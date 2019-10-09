@@ -6,6 +6,8 @@ const mongoose = require('mongoose')
 
 const cors = require('cors')
 
+const path = require('path')
+
 const routes = require('./routes')
 
 
@@ -24,6 +26,8 @@ app.use(cors())
 
 // Informando para a aplicação Express que as requisições estão utilizando o tipo JSON
 app.use(express.json())
+
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
 
 app.use(routes)
 

@@ -9,7 +9,10 @@ export default function Dashboard() {
     const [spots, setSpots] = useState([])
 
     useEffect(() => {
-        const socket = socketio('http://10.1.103.183:3000')
+        const user_id = localStorage.getItem('user')
+        const socket = socketio('http://10.1.103.183:3000', {
+            query: { user_id }
+        })
     }, [])
 
     useEffect(() => {

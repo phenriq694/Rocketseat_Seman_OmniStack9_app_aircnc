@@ -13,6 +13,13 @@ export default function Dashboard() {
         const socket = socketio('http://10.1.103.183:3000', {
             query: { user_id }
         })
+
+        console.log('ppasou por aqui')
+
+        socket.on('booking_request', data => {
+            console.log(data)
+        })
+
     }, [])
 
     useEffect(() => {
